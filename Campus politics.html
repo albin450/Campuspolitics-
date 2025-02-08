@@ -17,90 +17,158 @@
         body {
             font-family: 'Manjari', sans-serif;
             line-height: 1.8;
-            background: #f5f5f5;
-            color: #333;
-            overflow-x: hidden;
+            background: #f0f2f5;
+            color: #1a1a1a;
         }
 
         .header {
-            background: linear-gradient(135deg, #663399 0%, #4B0082 100%);
+            background: linear-gradient(135deg, #1e3799 0%, #0c2461 100%);
             color: white;
-            padding: 2rem;
+            padding: 3rem 2rem;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: inherit;
+            transform: skewY(-3deg);
+            z-index: -1;
         }
 
         .header h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
             font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
         }
 
         .container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 2rem;
         }
 
         .blog-post {
             background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
             margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-5px);
         }
 
         .blog-post h2 {
-            color: #663399;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
+            color: #1e3799;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
             font-weight: 700;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .blog-post h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: #1e3799;
         }
 
         .blog-content {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             text-align: justify;
+            color: #333;
         }
 
         .blog-content p {
-            margin-bottom: 1.5rem;
-            word-wrap: break-word;
+            margin-bottom: 1.8rem;
+            line-height: 2;
         }
 
         .highlight {
-            background: linear-gradient(120deg, #ffd3b6 0%, #ffaaa5 100%);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 2rem 0;
+            background: linear-gradient(120deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2.5rem 0;
+            border-left: 5px solid #1e3799;
+        }
+
+        .highlight p {
+            margin-bottom: 0;
+            font-style: italic;
+            color: #1a237e;
         }
 
         .footer {
             text-align: center;
-            padding: 2rem;
-            background: #4B0082;
+            padding: 3rem;
+            background: #0c2461;
             color: white;
-            margin-top: 3rem;
-            width: 100%;
+            margin-top: 4rem;
+            position: relative;
         }
 
-        @media (max-width: 600px) {
+        .footer p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
             .header h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             .blog-post {
-                padding: 1rem;
+                padding: 1.5rem;
+            }
+
+            .blog-content {
+                font-size: 1.1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+                margin: 2rem auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .blog-post h2 {
+                font-size: 1.8rem;
             }
 
             .blog-content {
                 font-size: 1rem;
             }
-        }
 
-        @media screen and (-webkit-min-device-pixel-ratio:0) {
-            body {
-                -webkit-text-size-adjust: none;
+            .highlight {
+                padding: 1.5rem;
             }
         }
     </style>
